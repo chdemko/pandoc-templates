@@ -168,6 +168,9 @@ $else$
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 $endif$
+% Defines tocless command
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 $if(dir)$
 \ifxetex
   % load bidi as late as possible as it modifies e.g. graphicx
